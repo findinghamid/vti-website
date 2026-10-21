@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-outfit), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-outfit), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+
+  /* VTI Brand Design Tokens - Extracted directly from Official Seal Logo */
+  --color-vti-primary: #061D42; /* Deep Academic Theological Navy (Main Seal Body) */
+  --color-vti-primary-hover: #0A2B5E;
+  --color-vti-secondary: #C08C52; /* Regal Seminary Gold (Rings, Lettering, Open Bible) */
+  --color-vti-secondary-hover: #A9763D;
+  --color-vti-gold: #C08C52;
+  --color-vti-gold-light: #D5A772;
+  --color-vti-navy: #061D42;
+  --color-vti-navy-dark: #041530;
+  --color-vti-red: #E93238; /* Cross Red (Christian Cross inside Seal) */
+  --color-vti-cyan: #02AEED; /* Academic Mortarboard Cyan */
+  --color-vti-heading: #061D42;
+  --color-vti-body: #57595F;
+  --color-vti-light: #F8F8FA;
+  --color-vti-cream: #FFF6DF;
+  --color-vti-cream-dark: #F8EFDA;
+  --color-vti-parchment: #FAF9F6;
+  --color-vti-warm-bg: #FAF9F6;
+  --color-vti-border: #EAEBED;
+  --color-vti-yellow: #C08C52;
+  --color-vti-green: #09BD3C;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #061D42;
+  --card: #ffffff;
+  --card-foreground: #061D42;
+  --popover: #ffffff;
+  --popover-foreground: #061D42;
+  --primary: #061D42;
+  --primary-foreground: #ffffff;
+  --secondary: #C08C52;
+  --secondary-foreground: #ffffff;
+  --muted: #F8F8FA;
+  --muted-foreground: #57595F;
+  --accent: #C08C52;
+  --accent-foreground: #ffffff;
+  --destructive: #E93238;
+  --destructive-foreground: #ffffff;
+  --border: #EAEBED;
+  --input: #EAEBED;
+  --ring: #061D42;
+  --radius: 0.75rem;
+
+  /* Legacy & Design System Aliases */
+  --tp-theme-primary: #061D42;
+  --tp-theme-primary-hover: #0A2B5E;
+  --tp-theme-accent: #C08C52;
+  --tp-theme-coral: #C08C52;
+  --tp-theme-orange: #C08C52;
+  --tp-theme-gold: #C08C52;
+  --tp-heading-primary: #061D42;
+  --tp-text-body: #57595F;
+  --tp-bg-light: #F8F8FA;
+  --tp-bg-cream: #FAF9F6;
+  --tp-bg-parchment: #FAF9F6;
+  --tp-border-primary: #EAEBED;
+}
+
+body {
+  background-color: #ffffff;
+  color: #061D42;
+  font-family: var(--font-sans);
+}
+
+/* Curved Underline Highlight Effect */
+.vti-underline-container {
+  position: relative;
+  display: inline-block;
+}
+
+.vti-underline-svg {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Custom text selection */
+::selection {
+  background-color: #061D42;
+  color: #ffffff;
+}
+
+/* Hide Google Translate top banner, tooltips, and shift */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#google_translate_element {
+  display: none !important;
+}
+
+.skiptranslate > iframe {
+  display: none !important;
+}
