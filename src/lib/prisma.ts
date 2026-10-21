@@ -1,5 +1,10 @@
 import { PrismaClient } from "@prisma/client";
 
+// Ensure DATABASE_URL is defined during build / serverless cold starts
+if (!process.env.DATABASE_URL) {
+  process.env.DATABASE_URL = "postgresql://postgres:postgres@localhost:5432/vti_production?schema=public";
+}
+
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
 };
